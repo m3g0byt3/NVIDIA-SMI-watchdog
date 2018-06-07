@@ -19,20 +19,20 @@
 ***
 1. Copy [watchdog.ps1] and [actions.bat] to the desired location
 2. Create new Windows Task Scheduler task with following parameters:
-	*       Run with highest privileges: `true`
-	*       Begin task: `on a schedule`
-	*       Schedule: `One-time`
-	*       Repeat task every: `(choose appropriate duration from 5 to 10 minutes)` 
-	*       For a duration of `Indefinitely`
-	*       Stop task if it runs longer than: `false`
-	*       Expire: `false`
-	*       Enabled: `true`
-	*       Allow Start On Demand: `true`
-	*       Run only on AC power: `false`
-	*       Action: start a program
-	*       Action details: 
-	       * Command: `powershell.exe`	
-	       * Arguments: `-ExecutionPolicy Bypass "%path_from_p1%\watchdog.ps1 [optional_arguments]"`
+	* Run with highest privileges: `true`
+	* Begin task: `on a schedule`
+	* Schedule: `One-time`
+	* Repeat task every: `(choose appropriate duration from 5 to 10 minutes)` 
+	* For a duration of `Indefinitely`
+	* Stop task if it runs longer than: `false`
+	* Expire: `false`
+	* Enabled: `true`
+	* Allow Start On Demand: `true`
+	* Run only on AC power: `false`
+	* Action: start a program
+	* Action details: 
+		* Command: `powershell.exe`	
+		* Arguments: `-ExecutionPolicy Bypass "%path_from_p1%\watchdog.ps1 [optional_arguments]"`
 
 	**OR** just import [Rig Utilization Monitoring.xml] task \(change UserId, schedule and arguments appropriately before use).
 	
@@ -41,6 +41,7 @@
 ### Usage
 ***
 Watchdog supports following arguments (all arguments are optional):
+
 `watchdog.ps1 -path 'C:\Program Files\NVIDIA Corporation\NVSMI' -threshold 25 -cycleCount 3 -sleepInterval 30 -writeLog 1`
 
 * **path** - path to `nvidia-smi.exe` executable file. 
@@ -66,6 +67,7 @@ Watchdog supports following arguments (all arguments are optional):
 ⚠️⚠️⚠️**Warning**⚠️⚠️⚠️
 
 If you want to use Windows Event Log - you must register log source manually once before use with the following command:
+
 `New-EventLog -source "Rig Monitoring" -logname Application`
 
 

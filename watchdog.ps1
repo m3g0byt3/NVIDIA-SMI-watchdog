@@ -5,7 +5,7 @@
 
 param (
 	[String]$_path			= "\NVIDIA Corporation\NVSMI\",
-	[String]$path 			= (Get-ChildItem -path Env:ProgramFiles).value + $_path,
+	[String]$path			= (Get-ChildItem -path Env:ProgramFiles).value + $_path,
 	[Int]$threshold			= 25,
 	[Int]$cycleCount		= 3,
 	[Int]$sleepInterval		= 30,
