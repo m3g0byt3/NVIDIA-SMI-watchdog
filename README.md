@@ -1,6 +1,8 @@
 # NVIDIA SMI watchdog
 
-— simple NVIDIA-SMI based software watchdog written in Powershell.
+Simple NVIDIA-SMI based software watchdog written in Powershell. 
+
+Fires when GPU utilization falls below user-defined threshold.
 
 ### Features
 ***
